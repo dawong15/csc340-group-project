@@ -7,11 +7,12 @@ using namespace std;
 class student{
     public:
         
-        enum sex {F,M};
+        enum sex {female, male};
 
         //student constructor
         student();
-        student(enum sex, int dalc, int walc, int g3);
+        // sex, workday alc. consum, weekend alc. consum, final grade, mother education, father education
+        student(enum sex, int dalc, int walc, int g3, int mEducation, int fEducation);
         
         void setSex (sex studentSex);
         sex getSex() const;
@@ -25,9 +26,15 @@ class student{
         void setG3(int newG3);
         int getG3() const;
 
+        void setmEducation(int newMEducation);
+        int getmEducation(int newMEducation);
+        
+        void setfEducation(int newFEducation);
+        int getfEducation(int newFEducation);
+
     private:
         sex studentSex;
-        int dalc, walc, g3;
+        int dalc, walc, g3, mEducation, fEducation;
 
 };
 #endif

@@ -6,17 +6,20 @@ using namespace std;
 #include "student.h"
 
 student::student(){
-    studentSex = F;
+    studentSex = female;
     dalc = -1;
     walc = -1;
     g3 = -1;
 }
 
-student::student(sex initStudentSex, int initDalc, int initWalc, int initG3){
+//sex, workday alc. consum, weekend alc. consum, final grade, mother education, father education
+student::student(sex initStudentSex, int initDalc, int initWalc, int initG3, int initfEducation, int initmEducation){
     studentSex = initStudentSex;
     dalc = initDalc;
     walc = initWalc;
     g3 = initG3;
+    fEducation = initfEducation;
+    mEducation = initmEducation;
 }
 void student::setSex (sex studentSex){
   studentSex = studentSex;
