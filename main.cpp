@@ -15,7 +15,7 @@ int main() {
     files::open_files("student-por.csv");
 
     vector<student> totalStudents(0);
-    totalStudents.clear(); //Clear vector
+    totalStudents.clear(); //Clear vector just in case
     
     //read file 1, push students onto a vector
     
