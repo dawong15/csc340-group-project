@@ -26,11 +26,13 @@ class student{
         void setG3(int newG3);
         int getG3() const;
 
-        void setmEducation(int newMEducation);
-        int getmEducation(int newMEducation);
+        void setmEducation(int newfEducation);
+        int getmEducation() const;
         
-        void setfEducation(int newFEducation);
-        int getfEducation(int newFEducation);
+        void setfEducation(int newfEducation);
+        int getfEducation() const;
+
+        void Print();
 
     private:
         sex studentSex;

@@ -13,6 +13,6 @@ Quicklinks:
 [Midterm Project Requirements] - https://docs.google.com/document/d/1yBS9zGXP2UJNDmC1trXopRtNCMnGG_yFhcMDxMUqZm4/edit
 [Group 14 Discord] - https://discord.gg/MBevTPwCH9
 [Project Proposal] - https://docs.google.com/document/d/1GQEdmy4TTDpBkSg8aXioXqY-XbE-z5um8PXZheYxbyY/edit
-[GitHub Repo] - https://github.com/dawong15/csc340-group-project/tree/master (Repo doesn't accurately reflect workload distribution, since all work, including commits + pushes, were done on replit.com as a group)
+[GitHub Repo] - https://github.com/dawong15/csc340-group-project/tree/master (Repo doesn't accurately reflect workload distribution, since all work was done on replit.com as a group. Commits/pushes were just done by 1 person)
 [replit Project] - https://replit.com/join/ciiilmvn-dawong15
 [Project Report] - UPDATE LATER

@@ -10,6 +10,8 @@ student::student(){
     dalc = -1;
     walc = -1;
     g3 = -1;
+    fEducation = -1;
+    mEducation = -1;
 }
 
 //sex, workday alc. consum, weekend alc. consum, final grade, mother education, father education
@@ -21,6 +23,7 @@ student::student(sex initStudentSex, int initDalc, int initWalc, int initG3, int
     fEducation = initfEducation;
     mEducation = initmEducation;
 }
+
 void student::setSex (sex studentSex){
   studentSex = studentSex;
 }
@@ -45,4 +48,23 @@ void student::setG3(int newG3){
 }
 int student::getG3() const{
     return g3;
+}
+
+void student::setmEducation(int newmEducation){
+    mEducation = newmEducation;
+}
+
+int student::getmEducation() const{
+    return mEducation;
+}
+void student::setfEducation(int newfEducation){
+    fEducation = newfEducation;
+}
+
+int student::getfEducation() const{
+    return fEducation;
+}
+
+void student::Print(){
+    cout << "Student Sex: " << studentSex <<", Workday Alc. Consum.: " << dalc << ", Weekend Alc. Consum.: " << walc << ", Final Grade (G3): " << g3 << ", Mother's Edu.: " << mEducation << ", Father's Edu.: " << fEducation << endl;
 }
