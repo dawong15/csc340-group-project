@@ -23,15 +23,16 @@ int main() {
     for (int i = 385; i < 395; i++){
         totalStudents.at(i).Print();
     }
-    
+    files::close_files("student-mat.csv");
+
     files::open_files("student-por.csv",totalStudents);
 
-    /* FIXME: Get rid of later. tests to see if any items got added after the student-mat entries. CURRENTLY BROKEN.
+    ///* FIXME: Get rid of later. tests to see if any items got added after the student-mat entries. CURRENTLY BROKEN.
     for(int i = 395 ; i < 405; i++){
         totalStudents.at(i).Print();
     }
-    */
-    files::close_files("student-mat.csv");
+    
+    
     files::close_files("student-por.csv");
 
 	return 0;

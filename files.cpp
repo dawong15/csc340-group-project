@@ -36,7 +36,7 @@ void files::open_files(string file_name, vector<student>& totalStudents){
         if(studentSex == "F"){     //depending on which char is read, set enum to F/M
             tempStudent.setSex(student::female);
         }
-        else {
+        else if(studentSex == "M"){
             tempStudent.setSex(student::male);
         }
 
