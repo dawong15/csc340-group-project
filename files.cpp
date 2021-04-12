@@ -10,17 +10,21 @@ using namespace std;
 #include "files.h"
 
 ifstream inFS;
+
 void files::open_files(string file_name, vector<student>& totalStudents){
   
     cout << "Attempting to open " << file_name << "." << endl;
     inFS.open(file_name);
 
+    // Test to see if the file could be opened or not.
 	if(!inFS.is_open()){
 		cout << file_name << " could not be opened." << endl;
     } 
       
     string readLine, ignore;
+    getline(inFS, ignore); //ignore the first line of the file being read.
     getline(inFS, ignore); //ignore first line
+
 
     while(getline(inFS, readLine)){
         student tempStudent;
@@ -28,23 +32,29 @@ void files::open_files(string file_name, vector<student>& totalStudents){
         stringstream streamString (readLine);
     
 
-        //getting + setting studentSex from file
+        // Getting + setting studentSex from file
         getline(streamString, ignore, ','); //ignore school
         getline(streamString, studentSex, ',');
         
 
-        if(studentSex == "F"){     //depending on which char is read, set enum to F/M
+        // Depending on which char is read, set enum to F/M
+        if(studentSex == "F"){     
             tempStudent.setSex(student::female);
         }
         else if(studentSex == "M"){
             tempStudent.setSex(student::male);      
         }
-
-        for(int i = 0; i < 4; i++){  //columns to be ignored, age to pstatus
+        /*
+        else{
+            cout << "Error. " << endl;
+        }
+        */
+        // Columns to be ignored, age to pstatus
+        for(int i = 0; i < 4; i++){  
             getline(streamString, ignore,',');
         }
 
-        //getting + setting mEducation from file
+        // Getting + setting mEducation from file
         getline(streamString, medu, ',');
         if(medu.at(0) == '1'){
             tempStudent.setmEducation(1);
@@ -59,7 +69,7 @@ void files::open_files(string file_name, vector<student>& totalStudents){
             tempStudent.setmEducation(4);
         }
 
-        //getting + setting fEducation from file
+        // Getting + setting fEducation from file
         getline(streamString, fedu, ',');
         if(fedu.at(0) == '1'){
             tempStudent.setfEducation(1);
@@ -73,12 +83,18 @@ void files::open_files(string file_name, vector<student>& totalStudents){
         else if(fedu.at(0) == '4'){
             tempStudent.setfEducation(4);
         }
+        /*
+        else{
+            cout << "Error. " << endl;
+        }
+        */
 
-        for(int i = 0; i < 18; i++){  //columns to be ignored, from Mjob to goout
+        // Columns to be ignored, from Mjob to goout
+        for(int i = 0; i < 18; i++){  
             getline(streamString, ignore,',');
         }
         
-        //getting + setting dalc from file
+        // Getting + setting dalc from file
         getline(streamString, dalc, ',');
         if (dalc.at(0) == '1'){
             tempStudent.setDalc(1);
@@ -95,8 +111,13 @@ void files::open_files(string file_name, vector<student>& totalStudents){
         else if(dalc.at(0) == '5'){
             tempStudent.setDalc(5);
         }
+        /*
+        else{
+            cout << "Error. " << endl;
+        }
+        */
 
-        //getting + setting walc from file
+        // Getting + setting walc from file
         getline(streamString, walc, ',');
         if (walc.at(0) == '1'){
             tempStudent.setWalc(1);
@@ -113,12 +134,18 @@ void files::open_files(string file_name, vector<student>& totalStudents){
         else if(walc.at(0) == '5'){
             tempStudent.setWalc(5);
         }
+        /*
+        else{
+            cout << "Error. " << endl;
+        }
+        */
 
-        for(int i = 0; i < 4; i++){  //columns to be ignored, health to G2
+        // Columns to be ignored, health to G2
+        for(int i = 0; i < 4; i++){  
             getline(streamString, ignore,',');
         }
         
-        //set G3 according to the spreadsheet (0-20)
+        // Set G3 according to the spreadsheet (0-20)
         getline(streamString, g3, ',');
         if(g3.at(0) == '0'){
             tempStudent.setG3(0);
@@ -183,16 +210,14 @@ void files::open_files(string file_name, vector<student>& totalStudents){
         else if(g3 == "20"){
             tempStudent.setG3(20);
         }
+        /*
         else{
             cout << "Error." << endl;
         }
-        
-        //Push student onto vector after iterating through columns
+        */
+        // Push student onto vector after iterating through columns
         totalStudents.push_back(tempStudent);
-
     }
-
-    
 }
 
 void files::close_files(string file_name){
