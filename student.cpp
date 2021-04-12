@@ -5,6 +5,7 @@ using namespace std;
 
 #include "student.h"
 
+// Default student constructor.
 student::student(){
     studentSex = female;
     dalc = -1;
@@ -13,8 +14,8 @@ student::student(){
     fEducation = -1;
     mEducation = -1;
 }
-
-//sex, workday alc. consum, weekend alc. consum, final grade, mother education, father education
+// Overloaded student constructor.
+// Sex, workday alc. consum, weekend alc. consum, final grade, mother education, father education
 student::student(sex initStudentSex, int initDalc, int initWalc, int initG3, int initfEducation, int initmEducation){
     studentSex = initStudentSex;
     dalc = initDalc;
@@ -24,6 +25,8 @@ student::student(sex initStudentSex, int initDalc, int initWalc, int initG3, int
     mEducation = initmEducation;
 }
 
+
+// Student Functions
 void student::setSex (sex newStudentSex){
   studentSex = newStudentSex;
 }
@@ -69,6 +72,7 @@ int student::getfEducation() const{
     return fEducation;
 }
 
+// General Print statement for all student related variables
 void student::Print(){
     cout << "Student Sex: " << studentSex <<", Workday Alc. Consum.: " << dalc << ", Weekend Alc. Consum.: " << walc << ", Final Grade (G3): " << g3 << ", Mother's Edu.: " << mEducation << ", Father's Edu.: " << fEducation << endl;
 }
