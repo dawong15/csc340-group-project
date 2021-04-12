@@ -27,17 +27,11 @@ int main() {
     vector<student> totalFemaleStu(0);
     vector<student> totalMaleStu(0);
 
-    int nF = totalFemaleStu.size();
-    int nM = totalMaleStu.size();
-
-
     // Variables related to finding correlation in problem 2
     int sumMandFedu = 0;
     int sumMandFeduSqr = 0;
     double EduTimesAlc = 0.0;
     double correlCoeffParents = 0.0;
-
-    int numStudents = totalStudents.size();
 
     // Clear vectors just in case (similarly to lab 3, assume nothing c: )
     totalStudents.clear(); 
@@ -69,15 +63,20 @@ int main() {
         }
     }
 
+    //vector sizes used in correlation coefficient calculations
+    int nF = totalFemaleStu.size();
+    int nM = totalMaleStu.size();
+    int numStudents = totalStudents.size();
+
     // Assign values associated with calculatiing the correlation coefficient for female students
-    for (int i = 0; i < totalFemaleStu.size(); i++){
-        alcSum = alcSum + ((5.0/7.0)*(double)totalFemaleStu.at(i).getDalc() + (2.0/7.0)*(double)totalFemaleStu.at(i).getWalc());
-        alcSquaredSum = alcSquaredSum + pow((5.0/7.0)*(double)totalFemaleStu.at(i).getDalc() + (2.0/7.0)*(double)totalFemaleStu.at(i).getWalc(), 2.0);
+    for (int i = 0; i < nF; i++){
+        alcSum = alcSum + ((double)totalFemaleStu.at(i).getDalc() + (double)totalFemaleStu.at(i).getWalc());
+        alcSquaredSum = alcSquaredSum + pow((double)totalFemaleStu.at(i).getDalc() + (double)totalFemaleStu.at(i).getWalc(), 2.0);
 
         g3Sum = g3Sum + totalFemaleStu.at(i).getG3();
         g3SquaredSum = g3SquaredSum + pow(totalFemaleStu.at(i).getG3(), 2.0);
         
-        AlcTimesG3 += ((5/7)*(double)totalFemaleStu.at(i).getDalc() + (2.0/7.0)*(double)totalFemaleStu.at(i).getWalc()) * (double)totalFemaleStu.at(i).getG3();
+        AlcTimesG3 += ((double)totalFemaleStu.at(i).getDalc() + (double)totalFemaleStu.at(i).getWalc()) * (double)totalFemaleStu.at(i).getG3();
 
     }
     
@@ -96,20 +95,20 @@ int main() {
     correlBottom = 0.0;
 
     // Assign values associated with calculatiing the correlation coefficient for male students
-    for (int i = 0; i < totalMaleStu.size(); i++){
-        alcSum = alcSum + ((5.0/7.0)*totalMaleStu.at(i).getDalc() + (2.0/7.0)*totalMaleStu.at(i).getWalc());
-        alcSquaredSum = alcSquaredSum + pow((5.0/7.0)*totalMaleStu.at(i).getDalc() + (2.0/7.0)*totalMaleStu.at(i).getWalc(), 2.0);
+    for (int i = 0; i < nM; i++){
+        alcSum = alcSum + (totalMaleStu.at(i).getDalc() + totalMaleStu.at(i).getWalc());
+        alcSquaredSum = alcSquaredSum + pow(totalMaleStu.at(i).getDalc() + totalMaleStu.at(i).getWalc(), 2.0);
 
         g3Sum = g3Sum + totalMaleStu.at(i).getG3();
         g3SquaredSum = g3SquaredSum + pow(totalMaleStu.at(i).getG3(), 2.0);
         
-        AlcTimesG3 += ((5/7)*totalMaleStu.at(i).getDalc() + (2.0/7.0)*totalMaleStu.at(i).getWalc()) * (double)totalMaleStu.at(i).getG3();
+        AlcTimesG3 += (totalMaleStu.at(i).getDalc() + totalMaleStu.at(i).getWalc()) * (double)totalMaleStu.at(i).getG3();
 
     }
 
     // Calculating the correlation coefficient for male students to their final grades
-    correlTop = (nF * AlcTimesG3 - alcSum * (double)g3Sum);
-    correlBottom =  sqrt( (nF * alcSquaredSum - pow(alcSum, 2.0)) * (nF * (double)g3SquaredSum - pow((double)g3Sum, 2.0)));
+    correlTop = (nM * AlcTimesG3 - alcSum * (double)g3Sum);
+    correlBottom =  sqrt( (nM * alcSquaredSum - pow(alcSum, 2.0)) * (nM * (double)g3SquaredSum - pow((double)g3Sum, 2.0)));
     correlCoeffM = correlTop / correlBottom;
 
     cout << "\n" << "Correlation coefficient for Female Students: " << correlCoeffF << endl << "Correlation coefficient for Male Students: " << correlCoeffM << "\n" << endl;
@@ -143,10 +142,10 @@ int main() {
         sumMandFedu += totalStudents.at(i).getfEducation() + totalStudents.at(i).getmEducation();
         sumMandFeduSqr += pow((totalStudents.at(i).getfEducation() + totalStudents.at(i).getmEducation()), 2.0);
 
-        alcSum = alcSum + ((5.0/7.0)*totalStudents.at(i).getDalc() + (2.0/7.0)*totalStudents.at(i).getWalc());
-        alcSquaredSum = alcSquaredSum + pow((5.0/7.0)*totalStudents.at(i).getDalc() + (2.0/7.0)*totalStudents.at(i).getWalc(), 2.0);
+        alcSum = alcSum + (totalStudents.at(i).getDalc() + totalStudents.at(i).getWalc());
+        alcSquaredSum = alcSquaredSum + pow(totalStudents.at(i).getDalc() + totalStudents.at(i).getWalc(), 2.0);
 
-        EduTimesAlc += ((5.0/7.0)*totalStudents.at(i).getDalc() + (2.0/7.0)*totalStudents.at(i).getWalc()) * (double)(totalStudents.at(i).getfEducation() + totalStudents.at(i).getmEducation());
+        EduTimesAlc += (totalStudents.at(i).getDalc() + totalStudents.at(i).getWalc()) * (double)(totalStudents.at(i).getfEducation() + totalStudents.at(i).getmEducation());
 
     }
 
