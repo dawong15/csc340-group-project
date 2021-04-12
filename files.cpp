@@ -12,16 +12,15 @@ using namespace std;
 ifstream inFS;
 void files::open_files(string file_name, vector<student>& totalStudents){
   
-    cout << "Attempting to open file." << endl;
+    cout << "Attempting to open " << file_name << "." << endl;
     inFS.open(file_name);
 
 	if(!inFS.is_open()){
-		cout << "File could not be opened." << endl;
+		cout << file_name << " could not be opened." << endl;
     } 
       
     string readLine, ignore;
     getline(inFS, ignore); //ignore first line
-    int total = 0; //FIXME, delete later
 
     while(getline(inFS, readLine)){
         student tempStudent;
@@ -31,13 +30,14 @@ void files::open_files(string file_name, vector<student>& totalStudents){
 
         //getting + setting studentSex from file
         getline(streamString, ignore, ','); //ignore school
-        getline(streamString, studentSex, ','); 
+        getline(streamString, studentSex, ',');
         
+
         if(studentSex == "F"){     //depending on which char is read, set enum to F/M
             tempStudent.setSex(student::female);
         }
         else if(studentSex == "M"){
-            tempStudent.setSex(student::male);
+            tempStudent.setSex(student::male);      
         }
 
         for(int i = 0; i < 4; i++){  //columns to be ignored, age to pstatus
@@ -190,16 +190,13 @@ void files::open_files(string file_name, vector<student>& totalStudents){
         //Push student onto vector after iterating through columns
         totalStudents.push_back(tempStudent);
 
-        //FIXME: For testing, get rid of later
-        total = total + 1;
     }
-    //FIXME: For testing, get rid of later
-    cout <<"Lines parsed through this file: " << total << endl;
+
     
 }
 
 void files::close_files(string file_name){
-  cout << "File closed." << endl;
+  cout << file_name << " is now closed." << endl;
 	inFS.close();
 }
 

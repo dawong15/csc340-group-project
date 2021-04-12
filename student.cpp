@@ -24,8 +24,8 @@ student::student(sex initStudentSex, int initDalc, int initWalc, int initG3, int
     mEducation = initmEducation;
 }
 
-void student::setSex (sex studentSex){
-  studentSex = studentSex;
+void student::setSex (sex newStudentSex){
+  studentSex = newStudentSex;
 }
 
 student::sex student::getSex() const{
@@ -41,6 +41,10 @@ int student::getDalc() const{
 }
 void student::setWalc(int newWalc){
     walc = newWalc;
+}
+
+int student::getWalc() const{
+    return walc;
 }
 
 void student::setG3(int newG3){

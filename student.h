@@ -14,7 +14,7 @@ class student{
         // sex, workday alc. consum, weekend alc. consum, final grade, mother education, father education
         student(enum sex, int dalc, int walc, int g3, int mEducation, int fEducation);
         
-        void setSex (sex studentSex);
+        void setSex (sex newStudentSex);
         sex getSex() const;
 
         void setDalc(int newDalc);
