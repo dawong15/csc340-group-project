@@ -16,6 +16,6 @@ Alcohol seems to affect male students and poorer performance in school (final gr
 
 PROBLEM 2: Measuring the correlation in regards to educational background of the student's parents to a student's drinking habit.
 
-Correlation coefficient for Parents: 0.00303825
+Correlation coefficient for Parents: -0.000783851
 
-Parental educational background is positively correlated with increased alcohol consumption. That is, a higher basis for parental educational background is correlated with increased alcohol consumption.
+Parental educational background is negatively correlated with increased alcohol consumption. That is, a higher basis for parental educational background is correlated with decreased alcohol consumption.
