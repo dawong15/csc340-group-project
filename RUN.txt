@@ -1,0 +1,19 @@
+OUTPUT:
+
+Attempting to open student-mat.csv.
+student-mat.csv is now closed.
+Attempting to open student-por.csv.
+student-por.csv is now closed.
+
+PROBLEM 1: Measuring the correlation between drinking habits and student success. In particular, whether or not alcohol affects males and females (from the both the Math and Portuguese class) differently in regards to school success (measured by final grades). 
+
+Correlation coefficient for Female Students: 0.01254
+Correlation coefficient for Male Students: -0.258831
+
+Alcohol seems to affect male students and poorer performance in school (final grad wise) more than female students. That is, increased alcohol consumption amongst male students is related to poorer performance in school in comparison to female students.
+
+PROBLEM 2: Measuring the correlation in regards to educational background of the student's parents to a student's drinking habit.
+
+Correlation coefficient for Parents: 0.00184223
+
+Parental educational background is positively correlated with increased alcohol consumption. That is, a higher basis for parental educational background is correlated with increased alcohol consumption.
