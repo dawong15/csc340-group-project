@@ -15,4 +15,4 @@ Quicklinks:
 [Project Proposal] - https://docs.google.com/document/d/1GQEdmy4TTDpBkSg8aXioXqY-XbE-z5um8PXZheYxbyY/edit
 [GitHub Repo] - https://github.com/dawong15/csc340-group-project/tree/master (Repo doesn't accurately reflect workload distribution, since all work was done on replit.com as a group. Commits/pushes were just done by 1 person)
 [replit Project] - https://replit.com/join/ciiilmvn-dawong15
-[Project Report] - UPDATE LATER
+[Project Report] - https://docs.google.com/document/d/1r8sLja_BmBlba-mXVy85_fKtbVoNYDKt-fkIVSexE9E/edit
