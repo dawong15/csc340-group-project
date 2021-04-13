@@ -56,7 +56,10 @@ void files::open_files(string file_name, vector<student>& totalStudents){
 
         // Getting + setting mEducation from file
         getline(streamString, medu, ',');
-        if(medu.at(0) == '1'){
+        if(medu.at(0) == '0'){
+            tempStudent.setmEducation(0);
+        }
+        else if(medu.at(0) == '1'){
             tempStudent.setmEducation(1);
         }
         else if(medu.at(0) == '2'){
@@ -71,7 +74,10 @@ void files::open_files(string file_name, vector<student>& totalStudents){
 
         // Getting + setting fEducation from file
         getline(streamString, fedu, ',');
-        if(fedu.at(0) == '1'){
+        if(fedu.at(0) == '0'){
+            tempStudent.setfEducation(0);
+        }
+        else if(fedu.at(0) == '1'){
             tempStudent.setfEducation(1);
         }
         else if(fedu.at(0) == '2'){
